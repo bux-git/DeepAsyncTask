@@ -1,12 +1,11 @@
 package com.dqr.www.deepasynctask;
 
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "MainActivity";
     private Handler mHandler = new Handler();
 
 
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Message message = mHandler.obtainMessage();
-        message.sendToTarget();
+
     }
+
 }
