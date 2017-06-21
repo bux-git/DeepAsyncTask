@@ -78,7 +78,7 @@ Handler 、 Looper 、Message 这三者都是Android异步消息处理线程相�
     
     对于网络IO操作，HandlerThread并不适合，因为它只有一个线程，还得排队一个一个等着。
 
-9.**如何在主线程给子线程发消息 **
+9.**如何在主线程给子线程发消息**
     
     主线程通过HandlerThread发送消息  
     子线程总通过使用主线程中创建的Handler向主线程发送消息   
