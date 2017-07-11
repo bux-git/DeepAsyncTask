@@ -2,6 +2,8 @@ package com.dqr.www.deepasynctask;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -24,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
             executorService.execute(syncRunnable);
         }
 
+        HandlerThread handlerThread=new HandlerThread("handlerThread");
+        //子线程中的Handler 主线程可以通过此handler向子线程中发送消息
+        Handler handler = new Handler(handlerThread.getLooper()){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
 
     }
 
